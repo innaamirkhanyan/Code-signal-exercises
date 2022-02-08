@@ -1,0 +1,92 @@
+<script>
+/*
+1. Write a function that returns the sum of two numbers.
+
+Example
+For param1 = 1 and param2 = 2, the output should be
+solution(param1, param2) = 3.
+ */
+
+ function solution(param1, param2) {
+    return param1 + param2;
+}
+
+console.log(solution(1, 2))
+
+/*
+2. Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100, the second - from the year 101 up to and including the year 200, etc.
+
+Example
+For year = 1905, the output should be
+solution(year) = 20;
+For year = 1700, the output should be
+solution(year) = 17.
+*/
+
+function solution(year) {
+    let i = 1;
+    while(true){
+        if(year >= i && year <= i*100) {
+          let result = i;
+    return result;
+    i = i + 1;
+    } else {
+        i = i + 1;
+        continue;
+    }
+    }
+}
+
+    
+    solution(1905);
+
+
+/*
+3. iven the string, check if it is a palindrome.
+
+Example
+
+For inputString = "aabaa", the output should be
+solution(inputString) = true;
+For inputString = "abac", the output should be
+solution(inputString) = false;
+For inputString = "a", the output should be
+solution(inputString) = true.
+*/
+
+
+function palindrome(str) {
+  // Step 1. Lowercase the string and use the RegExp to remove unwanted characters from it
+  var re = /[\W_]/g; // or var re = /[^A-Za-z0-9]/g;
+  
+  var lowRegStr = str.toLowerCase().replace(re, '');
+  // str.toLowerCase() = "A man, a plan, a canal. Panama".toLowerCase() = "a man, a plan, a canal. panama"
+  // str.replace(/[\W_]/g, '') = "a man, a plan, a canal. panama".replace(/[\W_]/g, '') = "amanaplanacanalpanama"
+  // var lowRegStr = "amanaplanacanalpanama";
+     
+  // Step 2. Use the same chaining methods with built-in functions from the previous article 'Three Ways to Reverse a String in JavaScript'
+  var reverseStr = lowRegStr.split('').reverse().join(''); 
+  // lowRegStr.split('') = "amanaplanacanalpanama".split('') = ["a", "m", "a", "n", "a", "p", "l", "a", "n", "a", "c", "a", "n", "a", "l", "p", "a", "n", "a", "m", "a"]
+  // ["a", "m", "a", "n", "a", "p", "l", "a", "n", "a", "c", "a", "n", "a", "l", "p", "a", "n", "a", "m", "a"].reverse() = ["a", "m", "a", "n", "a", "p", "l", "a", "n", "a", "c", "a", "n", "a", "l", "p", "a", "n", "a", "m", "a"]
+  // ["a", "m", "a", "n", "a", "p", "l", "a", "n", "a", "c", "a", "n", "a", "l", "p", "a", "n", "a", "m", "a"].join('') = "amanaplanacanalpanama"
+  // So, "amanaplanacanalpanama".split('').reverse().join('') = "amanaplanacanalpanama";
+  // And, var reverseStr = "amanaplanacanalpanama";
+   
+  // Step 3. Check if reverseStr is strictly equals to lowRegStr and return a Boolean
+  return reverseStr === lowRegStr; // "amanaplanacanalpanama" === "amanaplanacanalpanama"? => true
+}
+ 
+
+function solution(inputString) {
+if (palindrome(inputString) === true){
+    return true;
+} else {
+    return false;
+}
+}
+
+
+solution("aabaa");
+
+
+</script>
