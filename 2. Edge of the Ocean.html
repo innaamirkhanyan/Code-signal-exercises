@@ -1,0 +1,29 @@
+<script>
+
+function solution(inputArray) {
+let i = 0;
+let productArray = [];
+while (i < inputArray.length - 1) {
+    
+
+    productArray[i] = inputArray[i] * inputArray[i + 1];
+    i = i + 1;
+
+} // 2, 6, 12
+// return(productArray);
+let j = 0;
+
+while(j < productArray.length){
+
+    if (productArray[j] < productArray[j + 1]) {
+        j = j + 1;
+    }
+    return productArray[j];
+    }
+
+}
+
+alert(solution([3, 6, -2, -5, 7, 3]));
+
+
+</script>
