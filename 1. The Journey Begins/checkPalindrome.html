@@ -1,0 +1,28 @@
+<script>
+/*3. Given the string, check if it is a palindrome.
+
+Example
+
+For inputString = "aabaa", the output should be
+solution(inputString) = true;
+For inputString = "abac", the output should be
+solution(inputString) = false;
+For inputString = "a", the output should be
+solution(inputString) = true.
+*/
+
+let solution = function (inputString) {
+    let i = 0;
+    while(i < inputString.length/2) {
+       if(inputString[i] !== inputString[inputString.length - 1 - i]){
+           return false;
+       } 
+       i = i + 1;
+    }
+return true;
+}
+
+alert(solution("a ,aaaba, a"));
+
+
+</script>
