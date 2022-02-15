@@ -1,0 +1,64 @@
+<script>
+/*
+2. Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n.
+
+A 1-interesting polygon is just a square with a side of length 1. An n-interesting polygon is obtained by taking the 
+n - 1-interesting polygon and appending 1-interesting polygons to its rim, 
+side by side. You can see the 1-, 2-, 3- and 4-interesting polygons in
+ the picture below.
+*/
+
+
+
+
+function solution(n) {
+   
+   let x = (n * 2) - 1 ; // 5
+   
+   let result = x;
+   let i = 0;
+   while (i < n - 1) {
+       result = result + (x - 2)*2;
+       i = i + 1;
+       x = x - 2; 
+       
+   }
+   
+
+return result ;
+}
+let n = 2;
+
+solution(n);
+
+
+
+/*
+2. another option
+*/
+
+function solution(n) {
+   
+   let x = (n * 2) - 1 + ((n * 2) - 2) ; // 
+   
+   let ankyun = 0;
+   let i = 0;
+   while (i < n - 1) {
+     ankyun = ankyun + i;
+       i = i + 1;
+              
+   }
+   
+   let result = ankyun * 4 + x;
+   
+   
+   
+return result ;
+}
+let n = 2;
+
+solution(n);
+
+
+
+</script>
