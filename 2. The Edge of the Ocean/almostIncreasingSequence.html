@@ -1,64 +1,45 @@
 <script>
 
-
 function solution(sequence) {
 
-let result = false;
+let k = 0;
+let count = 0;
+while (k < sequence.length){ 
+ if(sequence[k] >= sequence[k + 1]){
+            count = count + 1;
+        } 
+    k = k + 1;  
+    };     
+
+
+if(count = 0){
+    
+    return true;
+    
+} else if(count > 1) {
+    
+    return false;
+    
+} else {
+    
 let i = 0;
 while (i < sequence.length){ 
-    if(!isIncreasingSequence(sequence)){
-        let changeArray = getSubSequence(sequence, i);
-        if(isIncreasingSequence(changeArray)){
-            result = true;
-            break;
-        }
-        
-    }; i = i + 1;
-    
-    
-    }; return result;
-    
-    
-}
-
-
-function getSubSequence(sequence, index){
-
-    var arrNew = [];
-    i = 0;
-    j = 0;
-    while( i < sequence.length){
-
-       if(i !== index) {
-         arrNew[j] = sequence[i] ;
-         i = i + 1;
-         j = j + 1;
-       }
-       else{
-        i = i + 1;
-       }
-
-    } return arrNew;
- 
-}
-
-// This function get an array and returns if it has Increasing sequence or not 
-function isIncreasingSequence(sequence) {
-    let i = 0;
-    let flag = true; 
-    while (i < sequence.length - 1){
-        if(sequence[i] >= sequence[i + 1]){
-            flag = false;
-            break;
+ if(sequence[i] >= sequence[i + 1]){
+     if(i == 0 || i == sequence.length - 1){
+         return true;
+     } else if (sequence[i] < sequence[i + 1]){
+         return true;
+         
+     }
+     }
         } 
-        i = i + 1;
-    } 
-    
-    return flag;
+    i = i + 1;  
+    };     
 }
+
 
 let sequence = [1, 2, 3];
-alert(solution(sequence));
+solution(sequence);
 
 
 </script>
