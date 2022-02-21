@@ -4,7 +4,7 @@ function solution(sequence) {
 
 let k = 0;
 let count = 0;
-while (k < sequence.length){ 
+while (k < sequence.length - 1){ 
  if(sequence[k] >= sequence[k + 1]){
             count = count + 1;
         } 
@@ -12,7 +12,7 @@ while (k < sequence.length){
     };     
 
 
-if(count = 0){
+if(count === 0){
     
     return true;
     
@@ -21,24 +21,35 @@ if(count = 0){
     return false;
     
 } else {
-    
-let i = 0;
-while (i < sequence.length){ 
- if(sequence[i] >= sequence[i + 1]){
-     if(i == 0 || i == sequence.length - 1){
-         return true;
-     } else if (sequence[i] < sequence[i + 1]){
-         return true;
+        let i = 0;
+        while (i < sequence.length - 1){        
+            
+            if(sequence[i] >= sequence[i + 1]){ 
+                
+                if(sequence[i - 1] >= sequence [i + 1]){
+                    
+                    if(sequence[i] < sequence[i + 2]){
+                        return true;
+                    } 
+                    
+                    else if(sequence[sequence.length - 1] < sequence[sequence.length - 2]){
+                        return true;
+                    }
+                    
+                    return false;    
+                } 
+                
+              
+            } 
+
+            i = i + 1;
          
-     }
-     }
-        } 
-    i = i + 1;  
-    };     
-}
+        };    return true; 
+    };
 
-
-let sequence = [1, 2, 3];
+    }
+debugger;
+let sequence = [1, 2, 1, 2];
 solution(sequence);
 
 
