@@ -14,24 +14,47 @@ Given matrix, a rectangular matrix of integers, where each value represents the 
     
 
     function solution(matrix) {
-let result = 0;
-for (i = 0; i < matrix[0].length; i++ ){
-    if(matrix[0][i] !== 0) {
-        result += matrix[0][i];
-    } else {
-        for(j = 1; j < matrix.length; j++){
-            matrix[j][i] = 0;
-        }
+    
+    let i = 0;
+    let arr = 0;
+    let result = 0;
 
-    }
-} return result
+    while (arr < matrix.length) {
+        while (i < matrix[arr].length){
+
+            if(matrix[arr][i] !== 0){
+
+                result += matrix[arr][i];
+
+            } else {
+
+                changeArr = arr + 1;
+
+                while (changeArr < matrix.length) {
+
+                    matrix[changeArr][i] = 0;
+
+                    changeArr++
+                }
+            }
+            i++;
+
+            }
+
+            arr++;
+            i = 0;
+
+        } return result;
+ 
+
 }
 
 let matrix = [[1, 0, 6, 0], 
-          [0, 5, 0, 1], 
-          [2, 1, 3, 10]]
+              [1, 5, 0, 1], 
+              [2, 1, 3, 10]]; 
 
-debugger;
+
+
 alert(solution(matrix));
 
 </script>
