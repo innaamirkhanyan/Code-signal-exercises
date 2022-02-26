@@ -1,0 +1,60 @@
+<script>
+
+    /*
+    After becoming famous, the CodeBots decided to move into a new building together. 
+    Each of the rooms has a different cost, and some of them are free, but there's a 
+    rumour that all the free rooms are haunted! Since the CodeBots are quite superstitious, 
+    they refuse to stay in any of the free rooms, or any of the rooms below any of the free rooms.
+
+Given matrix, a rectangular matrix of integers, where each value represents the cost of the room,
+ your task is to return the total sum of all rooms that are suitable for the CodeBots 
+ (ie: add up all the values that don't appear below a 0).
+    */
+
+    
+
+    function solution(matrix) {
+    
+    let i = 0;
+    let arr = 0;
+    let result = 0;
+
+    while (arr < matrix.length) {
+        while (i < matrix[arr].length){
+
+            if(matrix[arr][i] !== 0){
+
+                result += matrix[arr][i];
+
+            } else {
+
+                changeArr = arr + 1;
+
+                while (changeArr < matrix.length) {
+
+                    matrix[changeArr][i] = 0;
+
+                    changeArr++
+                }
+            }
+            i++;
+
+            }
+
+            arr++;
+            i = 0;
+
+        } return result;
+ 
+
+}
+
+let matrix = [[1, 0, 6, 0], 
+              [1, 5, 0, 1], 
+              [2, 1, 3, 10]]; 
+
+
+
+alert(solution(matrix));
+
+</script>

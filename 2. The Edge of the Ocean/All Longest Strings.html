@@ -1,0 +1,47 @@
+<script>
+
+/*
+Given an array of strings, return another array containing all of its longest strings.
+
+Example
+
+For inputArray = ["aba", "aa", "ad", "vcd", "aba"], the output should be
+solution(inputArray) = ["aba", "vcd", "aba"].
+
+*/
+
+function solution(inputArray) {
+    
+    let newArray = [inputArray[0]];
+    
+     // newArray tanq input array 0 dranic sksac hashvenq 
+    let i = 0;
+    
+    let j = 0;
+    
+    while (i < inputArray.length - 1) {
+        
+        if(newArray[j].length < inputArray[i + 1].length){
+            newArray = [inputArray[i + 1]]
+            j = 0;
+    
+        } else if(newArray[j].length === inputArray[i + 1].length){
+            
+            newArray[j + 1] = inputArray[i + 1];
+            
+            j++;
+        } 
+    
+        i++;
+        
+    } return newArray;
+       
+    }
+    
+    
+
+let a = ["a", "abc", "cbd", "zzzzzz", "a", "abcdef", "asasa", "aaaaaa"]
+alert(solution(a));
+
+
+</script>
