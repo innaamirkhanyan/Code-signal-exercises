@@ -15,7 +15,41 @@ Strings have 3 common characters - 2 "a"s and 1 "c".
     */
 
     function solution(s1, s2) {
+let count = 0;
+let i = 0;
+let j = 0;
+
+while(i < s1.length) {
+    
+   while(j < s2.length){
+        
+        if(s1[i] === s2[j]){ 
+
+            count = count + 1;
+            i++;
+            j = 0;
+
+    } else {
+
+        j++
+
+    }
+    
+   } 
+    i++;
+    j = 0;
+    
+} return count;
 
 }
+
+ 
+
+let s1 = "abca";
+let s2 = "xyzbac";
+
+debugger;
+alert(solution(s1, s2));
+
 
 </script>
