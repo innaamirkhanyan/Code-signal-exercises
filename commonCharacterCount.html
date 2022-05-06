@@ -27,7 +27,10 @@ while(i < s1.length) {
 
             count = count + 1;
             i++;
-            j = 0;
+            s2 = s2.slice(0, j) + s2.slice(j + 1)
+
+
+         j = 0;
 
     } else {
 
@@ -42,6 +45,7 @@ while(i < s1.length) {
 } return count;
 
 }
+
 
  
 
