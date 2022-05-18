@@ -1,0 +1,30 @@
+<script>
+function solution(n) {
+    let left = 0;
+    let right = 0;
+
+    sNumber = n.toString();
+
+
+    for(i = 0; i < sNumber.length/2; i++) {
+        left = left + +sNumber[i];
+    }
+
+   let sNumberReversed = sNumber.split("").reverse().join("");
+
+  for(i = 0; i < sNumber.length/2; i++) {
+        right = right + +sNumberReversed[i];
+    }
+  
+
+    if(left === right) {
+        return true;
+    } 
+    return false; 
+
+}
+let n = 1230;
+debugger;
+alert(solution(n));
+
+</script>
